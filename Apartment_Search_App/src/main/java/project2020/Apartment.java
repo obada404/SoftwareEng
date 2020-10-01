@@ -1,31 +1,32 @@
+package project2020;
 
 public class Apartment {
-enum Placement{
+	 enum Placement{
 	City, Village
 }
-enum Material{
+ enum Material{
 	 Stone,Brick,Wood
 }
 
-enum type{
+ enum type{
 	 Apartment, house
 }
-enum Lease_Length{
+ enum Lease_Length{
 	short_term_6_months, long_term_year
 }
-enum Amenities{
+ enum Amenities{
 	AirConditioning, Balcony, Elevator, FirePlace, Garage_Parking,
 	Swimming_Pool
 }
 
 
-  private String Placement,Material,Price,type,Lease_Length,Amenities;
-  private int Area,bedrooms,bathrooms;
+  private String Placement,Material,type,Lease_Length,Amenities;
+  private int Area,bedrooms,bathrooms,Price;
   private boolean Allow_Pets;
 	
 	
 	
-	public Apartment(String placement, String material, String price, String type, String lease_Length,
+	public Apartment(String placement, String material, int price, String type, String lease_Length,
 			String amenities, int area, int bedrooms, int bathrooms, boolean allow_Pets) {
 		super();
 		Placement = placement;
@@ -55,10 +56,10 @@ enum Amenities{
 		Material = material;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return Price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		Price = price;
 	}
 	public String getType() {
