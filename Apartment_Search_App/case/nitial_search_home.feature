@@ -35,21 +35,21 @@ Scenario: Search home by Material
   
   
  
-   @Amenities
+   @Amenitiesq
    Scenario: Search home  by Amenities
-  When I search about home by Amenities "Balcony"
+  When I search about home by Amenities "swimmingpool"
   Then A list of homes that matches the Amenities should be returned and printed on the console
   @ByAllowPets
     Scenario: Search home  By Allow Pets
-  When I search about home by  Allow Pets "yas"
+  When I search about home by  Allow Pets "yes"
   Then A list of homes that matches the Allow Pets should be returned and printed on the console
   @bedrooms
    Scenario: Search home by Number of bedrooms
-  When I search about home by Number of bedrooms 1
+  When I search about home by Number of bedrooms 3
   Then A list of homes that matches the  Number of bedrooms  should be returned and printed on the console
   @bathrom
      Scenario: Search home by Number of bathrooms
-  When I search about home by Number of bathrooms 1
+  When I search about home by Number of bathrooms 2
   Then A list of homes that matches the  Number of bathrooms  should be returned and printed on the console
 
 @byArea
@@ -62,12 +62,30 @@ Scenario: Search home by Material
          @byprice1
 Scenario: Search about home by  price between two number
     When I search about home by price less than 200 and Greater than 400
-    
     Then A list of homes that matches the price should be returned and printed on the console
    
 @byArea1
- Scenario: Search about homeby area between two number 
+ Scenario: Search about home by area between two number 
     When I search about home by area less than 150 and Greater than 400
     Then A list of homes that matches the area should be returned and printed on the console
+     
+  Scenario: Search about home By Combination of at least 2 of the above mentioned scenarios
+    When I search about home by area less than 150 and Greater than 400
+    And I search about home by price less than 200 and Greater than 400
+    And I search about home by Amenities "Balcony"
+    And I search about home by Lease Length  "short term_6 months"
+    Then A list of homes that matches the this Combination should be returned and printed on the console
     
- 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

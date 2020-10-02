@@ -111,7 +111,7 @@ public ArrayList<Apartment> searchBybedrooms(int numd) {
 	 result.clear();
 	 for(Apartment x:all)
 	  {
-		  if(x.getBathrooms()==numd)
+		  if(x.getBedrooms()==numd)
 			  result.add(x);
 	  }
 	  return result;
@@ -120,17 +120,18 @@ public ArrayList<Apartment> searchBybathrooms(int numt) {
 	 result.clear();
 	 for(Apartment x:all)
 	  {
-		  if(x.getBathrooms()==numt)
+		  if(numt==x.getBathrooms()) {
 			  result.add(x);
+		  }
 	  }
 	  return result;
 }
 public ArrayList<Apartment> searchByAllow_Pets(String  string) {
 	 result.clear();
 	 for(Apartment x:all) {
-		  if(x.isAllow_Pets()&&string.equals("NO"))
+		  if((!x.isAllow_Pets())&&string.equals("no"))
 			  result.add(x);
-		  else if(!x.isAllow_Pets()&&string.equals("YES"))
+		  else if(x.isAllow_Pets()&&string.equals("yes"))
 			  result.add(x);
 	  }
 	  return result;
@@ -158,7 +159,7 @@ public ArrayList<Apartment> searchByAmenities(String strings) {
 	 result.clear();
 	 for(Apartment x:all)
 	  {
-		  if(x.getAmenities().contains(strings))
+		  if(x.getAmenities().toLowerCase().contains(strings))
 			  result.add(x);
 	  }
 		  
@@ -169,9 +170,13 @@ public ArrayList<Apartment> searchByAmenities(String strings) {
 }
 public void print(ArrayList<Apartment> e) {
 	for(Apartment g : e) {
-		System.out.println(g.getType());
-		g.toString();
+		System.out.println(g.toString());
+
 	}
+	if(e.isEmpty())
+	System.out.println( "no result");
+	
+	System.out.println(  );
 
 }
 

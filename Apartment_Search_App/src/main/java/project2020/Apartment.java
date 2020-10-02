@@ -72,7 +72,10 @@ public class Apartment {
 		return Lease_Length;
 	}
 	public void setLease_Length(String lease_Length) {
-		Lease_Length = lease_Length;
+		if(lease_Length.equals("6"))
+		Lease_Length = "short term_6 months";
+		else 
+			Lease_Length = "long term_year";
 	}
 	public String getAmenities() {
 		return Amenities;
