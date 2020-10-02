@@ -125,10 +125,12 @@ public ArrayList<Apartment> searchBybathrooms(int numt) {
 	  }
 	  return result;
 }
-public ArrayList<Apartment> searchByAllow_Pets(Boolean  Ame) {
+public ArrayList<Apartment> searchByAllow_Pets(String  string) {
 	 result.clear();
 	 for(Apartment x:all) {
-		  if(x.isAllow_Pets())
+		  if(x.isAllow_Pets()&&string.equals("NO"))
+			  result.add(x);
+		  else if(!x.isAllow_Pets()&&string.equals("YES"))
 			  result.add(x);
 	  }
 	  return result;
@@ -167,9 +169,10 @@ public ArrayList<Apartment> searchByAmenities(String strings) {
 }
 public void print(ArrayList<Apartment> e) {
 	for(Apartment g : e) {
+		System.out.println(g.getType());
 		g.toString();
 	}
-	
+
 }
 
 

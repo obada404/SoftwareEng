@@ -9,7 +9,7 @@ Given  these homes are contained in the system
          
                
   Scenario Outline: Search home by type
-  When I search about home by "HOUSE"
+  When I search about home by type "HOUSE"
   Then A list of homes that matches the  type specification should be returned and printed on the console
 
     Scenario: Search about home with less than a specific price
@@ -18,44 +18,40 @@ Given  these homes are contained in the system
 
 @byMaterial
 Scenario: Search home by Material
-  When I search about home by "BRICK"
+  When I search about home by Material "BRICK"
   Then A list of homes that matches the  Material specification should be returned and printed on the console
   
   
     @byplacement
  Scenario Outline: Search home by placement
-  When I search about home by "CITY"
+  When I search about home by placement "CITY"
   Then A list of homes that matches the  placement specification should be returned and printed on the console
   
   
   @ByLeaseLength 
    Scenario: Search home  by Lease Length 
-  When I search about home by "short term_6 months"
+  When I search about home by Lease Length  "short term_6 months"
   Then A list of homes that matches the Lease Length  should be returned and printed on the console
   
   
  
    @Amenities
    Scenario: Search home  by Amenities
-  When I search about home by "Balcony"
+  When I search about home by Amenities "Balcony"
   Then A list of homes that matches the Amenities should be returned and printed on the console
   @ByAllowPets
     Scenario: Search home  By Allow Pets
-  When I search about home by "yas"
+  When I search about home by  Allow Pets "yas"
   Then A list of homes that matches the Allow Pets should be returned and printed on the console
   @bedrooms
    Scenario: Search home by Number of bedrooms
-  When I search about home by 1
+  When I search about home by Number of bedrooms 1
   Then A list of homes that matches the  Number of bedrooms  should be returned and printed on the console
   @bathrom
      Scenario: Search home by Number of bathrooms
-  When I search about home by 1
+  When I search about home by Number of bathrooms 1
   Then A list of homes that matches the  Number of bathrooms  should be returned and printed on the console
-     @byprice
-Scenario: Search about home by price less than number
-    When I search about home by price less than 200
-    Then A list of homes that matches the price  should be returned and printed on the console
-   
+
 @byArea
  Scenario: Search about home by  area less than number
     When I search about home by area less than 150
@@ -73,3 +69,5 @@ Scenario: Search about home by  price between two number
  Scenario: Search about homeby area between two number 
     When I search about home by area less than 150 and Greater than 400
     Then A list of homes that matches the area should be returned and printed on the console
+    
+ 

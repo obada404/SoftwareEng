@@ -35,8 +35,8 @@ public class Test {
 
 
 
-		@When("I search about home by {string}")
-		public void iSearchAboutHomeBy(String string) {
+		@When("I search about home by type {string}")
+		public void iSearchAboutHomeByType(String string) {
 		cu=  w.searchByType(string);
 		}
 		@Then("A list of homes that matches the  type specification should be returned and printed on the console")
@@ -55,58 +55,111 @@ public class Test {
 		public void aListOfHomesThatMatchesThePriceSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
 			w.print(cu);
 		}
-
-		
-		
+		@When("I search about home by Material {string}")
+		public void iSearchAboutHomeByMaterial(String string) {
+			cu=  w.searchByMaterial(string);
+		}
 		@Then("A list of homes that matches the  Material specification should be returned and printed on the console")
 		public void aListOfHomesThatMatchesTheMaterialSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
-		    // Write code here that turns the phrase above into concrete actions
-		    throw new io.cucumber.java.PendingException();
+			w.print(cu);
 		}
-		
-		
-	
 
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-
-
-
-		
-		@When("I search about home by {int}")
-		public void iSearchAboutHomeBy(Integer int1) {
-		    // Write code here that turns the phrase above into concrete actions
-		    throw new io.cucumber.java.PendingException();
+		@When("I search about home by placement {string}")
+		public void iSearchAboutHomeByPlacement(String string) {
+			cu=  w.searchByPlacement(string);
+		}
+		@Then("A list of homes that matches the  placement specification should be returned and printed on the console")
+		public void aListOfHomesThatMatchesThePlacementSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
+			w.print(cu);
+		}
+		@When("I search about home by Lease Length  {string}")
+		public void iSearchAboutHomeByLeaseLength(String string) {
+			cu=  w.searchByLease_Length(string);
+		}
+		@Then("A list of homes that matches the Lease Length  should be returned and printed on the console")
+		public void aListOfHomesThatMatchesTheLeaseLengthShouldBeReturnedAndPrintedOnTheConsole() {
+			w.print(cu);
+		}
+		@When("I search about home by Amenities {string}")
+		public void iSearchAboutHomeByAmenities(String string) {
+			cu=  w.searchByAmenities(string);
 		}
 
 
 
+		@Then("A list of homes that matches the Amenities should be returned and printed on the console")
+		public void aListOfHomesThatMatchesTheAmenitiesShouldBeReturnedAndPrintedOnTheConsole() {
+			w.print(cu);
+		}
+		@When("I search about home by  Allow Pets {string}")
+		public void iSearchAboutHomeByAllowPets(String string) {
+			cu=  w.searchByAllow_Pets(string);
+		}
+
+
+
+		@Then("A list of homes that matches the Allow Pets should be returned and printed on the console")
+		public void aListOfHomesThatMatchesTheAllowPetsShouldBeReturnedAndPrintedOnTheConsole() {
+			w.print(cu);
+		}
+		@When("I search about home by Number of bedrooms {int}")
+		public void iSearchAboutHomeByNumberOfBedrooms(Integer int1) {
+			cu=  w.searchBybedrooms(int1);
+		}
+
+		@Then("A list of homes that matches the  Number of bedrooms  should be returned and printed on the console")
+		public void aListOfHomesThatMatchesTheNumberOfBedroomsShouldBeReturnedAndPrintedOnTheConsole() {
+			w.print(cu);
+		}
+		@When("I search about home by Number of bathrooms {int}")
+		public void iSearchAboutHomeByNumberOfBathrooms(Integer int1) {
+			cu=  w.searchBybathrooms(int1);
+		}
 		@Then("A list of homes that matches the  Number of bathrooms  should be returned and printed on the console")
 		public void aListOfHomesThatMatchesTheNumberOfBathroomsShouldBeReturnedAndPrintedOnTheConsole() {
-		    // Write code here that turns the phrase above into concrete actions
-		    throw new io.cucumber.java.PendingException();
+         w.print(cu);
 		}
+
+		
+		@When("I search about home by area less than {int}")
+		public void iSearchAboutHomeByAreaLessThan(Integer int1) {
+			cu=  w.searchByRangeOfAreas(0, int1);
+		}
+
+
+
+
+		@Then("A list of homes that matches the area specification should be returned and printed on the console")
+		public void aListOfHomesThatMatchesTheAreaSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
+			 w.print(cu);
+		}
+
+		@When("I search about home by price less than {int} and Greater than {int}")
+		public void iSearchAboutHomeByPriceLessThanAndGreaterThan(Integer int1, Integer int2) {
+			cu=  w.searchByRangeOfPrices(int2, int1);
+		}
+
+
+
+		@Then("A list of homes that matches the price should be returned and printed on the console")
+		public void aListOfHomesThatMatchesThePriceShouldBeReturnedAndPrintedOnTheConsole() {
+			 w.print(cu);
+		}
+
+		@When("I search about home by area less than {int} and Greater than {int}")
+		public void iSearchAboutHomeByAreaLessThanAndGreaterThan(Integer int1, Integer int2) {
+			cu=  w.searchByRangeOfAreas(int1, int2);
+		}
+
+
+
+
+		@Then("A list of homes that matches the area should be returned and printed on the console")
+		public void aListOfHomesThatMatchesTheAreaShouldBeReturnedAndPrintedOnTheConsole() {
+			 w.print(cu);
+		}
+
+
 
 }
