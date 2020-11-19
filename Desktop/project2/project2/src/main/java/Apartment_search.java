@@ -14,6 +14,7 @@ public class Apartment_search {
 private ArrayList<Apartment> all =new ArrayList<Apartment> () ;
  public static  ArrayList<Apartment> result=new ArrayList<Apartment> () ;
   private int x ;
+  Mockemail moc =new Mockemail(this );
 private   Emailservices emailservices =new Emailservices();
 public void setEmailservices(Emailservices emailservices) {
 	// TODO Auto-generated method stub

@@ -2,6 +2,8 @@
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -33,7 +35,10 @@ public class Test {
 	private int PriceLessThanAnd;
 	private int AndGreaterThan;
 	private int AreaGreaterThan;
-
+	boolean last =false;
+	private ArrayList<Apartment> list0= new ArrayList<Apartment>();
+	private ArrayList<Apartment> list = new ArrayList<Apartment>();
+	private ArrayList<Apartment> list2 ;
 	private Apartment_search res;
 
         @Given("these homes are contained in the system")
@@ -53,7 +58,7 @@ public class Test {
 		}
 
 
-    	private  void last_senrio(ArrayList <Apartment>cu) {
+   /* 	private  void last_senrio(ArrayList <Apartment>cu) {
 			if(First ==null)
 				First =cu;
 			else
@@ -64,14 +69,14 @@ public class Test {
 			 
 			s2ed =null;
 				
-		}
+		}*/
 		@When("I search about home by type {string}")
 		public void iSearchAboutHomeByType(String string) {
 			cu.clear();
 			ByType =string;
 		cu.addAll(w.searchByType(ByType));
-		
-		 last_senrio(cu);
+		First =last(cu);
+	//	 last_senrio(cu);
 	
 		
 		}
@@ -107,7 +112,8 @@ public class Test {
 			
 			PriceLessThan =int1;
 			cu.addAll(w.searchByRangeOfPrices(0, int1));
-			 last_senrio(cu);
+			First =last(cu);
+		//	 last_senrio(cu);
 		}
 		@Then("A list of homes that matches the price specification should be returned and printed on the console")
 		public void aListOfHomesThatMatchesThePriceSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
@@ -131,7 +137,8 @@ public class Test {
 			cu.clear();
 			Material =string;
 			cu.addAll( w.searchByMaterial(string));
-			 last_senrio(cu);
+			First =last(cu);
+			// last_senrio(cu);
 		}
 		@Then("A list of homes that matches the  Material specification should be returned and printed on the console")
 		public void aListOfHomesThatMatchesTheMaterialSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
@@ -157,7 +164,7 @@ public class Test {
 			cu.clear();
 			Placement =string;
 			cu.addAll( w.searchByPlacement(string));
-			 last_senrio(cu);
+			First =last(cu);// last_senrio(cu);
 		}
 		@Then("A list of homes that matches the  placement specification should be returned and printed on the console")
 		public void aListOfHomesThatMatchesThePlacementSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
@@ -181,7 +188,7 @@ public class Test {
 			cu.clear();
 			LeaseLength =string;
 			cu.addAll( w.searchByLease_Length(string));
-			 last_senrio(cu);
+			First =last(cu);// last_senrio(cu);
 		}
 		@Then("A list of homes that matches the Lease Length  should be returned and printed on the console")
 		public void aListOfHomesThatMatchesTheLeaseLengthShouldBeReturnedAndPrintedOnTheConsole() {
@@ -205,7 +212,7 @@ public class Test {
 			Amenities =string;
 			cu.clear();
 			cu.addAll( w.searchByAmenities(string));
-			 last_senrio(cu);
+			First =last(cu);//	 last_senrio(cu);
 		}
 		@Then("A list of homes that matches the Amenities should be returned and printed on the console")
 		public void aListOfHomesThatMatchesTheAmenitiesShouldBeReturnedAndPrintedOnTheConsole() {
@@ -229,7 +236,7 @@ public class Test {
 			cu.clear();
 			AllowPets =string;
 			cu.addAll( w.searchByAllow_Pets(string));
-			 last_senrio(cu);
+			First =last(cu);//	 last_senrio(cu);
 		}
 
 
@@ -254,7 +261,7 @@ public class Test {
 			NumberOfBedrooms =int1;
 			cu.clear();
 			cu.addAll( w.searchBybedrooms(int1));
-			 last_senrio(cu);
+			First =last(cu);//	 last_senrio(cu);
 		}
 
 		@Then("A list of homes that matches the  Number of bedrooms  should be returned and printed on the console")
@@ -279,7 +286,7 @@ public class Test {
 			cu.clear();
 			NumberOfBathrooms =int1;
 			cu.addAll(w.searchBybathrooms(int1));
-			 last_senrio(cu);
+			First =last(cu);//	 last_senrio(cu);
 		}
 		@Then("A list of homes that matches the  Number of bathrooms  should be returned and printed on the console")
 		public void aListOfHomesThatMatchesTheNumberOfBathroomsShouldBeReturnedAndPrintedOnTheConsole() {
@@ -306,7 +313,7 @@ public class Test {
 			cu.clear();
 			AreaLessThan =int1;
 			cu.addAll( w.searchByRangeOfAreas(0, int1));
-			// last_senrio(cu);
+			First =last(cu);	// last_senrio(cu);
 		}
 		@Then("A list of homes that matches the area specification should be returned and printed on the console")
 		public void aListOfHomesThatMatchesTheAreaSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
@@ -333,7 +340,7 @@ public class Test {
 			AndGreaterThan=int1;
 			  PriceLessThanAnd=int2;
 			cu.addAll( w.searchByRangeOfPrices(int1, int2));
-			 last_senrio(cu);
+			First =last(cu);//	 last_senrio(cu);
 		}
 
 
@@ -361,7 +368,7 @@ public class Test {
 			AreaGreaterThan=int1;
 			cu.clear();
 			cu.addAll(  w.searchByRangeOfAreas(int1, int2));
-			 last_senrio(cu);
+			First =last(cu);//	 last_senrio(cu);
 		}
 
 
@@ -402,11 +409,37 @@ public class Test {
 			
 		}
 		
+		public <T> ArrayList<T> last(ArrayList<T> list1){
+			list0.clear();
+			 list0.addAll((Collection<? extends Apartment>) list1);
+
+
+			if(  !last) {
+				list=(ArrayList<Apartment>) list0.clone();
+				
+				last =true;
+			
+			
+			}
+			else {
+				
+				list2 =(ArrayList<Apartment>) list0.clone();
+				
+				
+				list=	(ArrayList<Apartment>) intersection(list,list2);
+			}
+			
+			
+			return (ArrayList<T>) list;
+			
+			
+		}
+		
 	    public <T>  ArrayList<T> intersection( ArrayList<T> list1,  ArrayList<T> list2) {
 	        ArrayList<T> list = new ArrayList<T>();
 
 	        for (T t : list1) {
-	            if(list2.contains(t)) {
+	            if( list2.contains(t)) {
 	                list.add(t);
 	            }
 	        }

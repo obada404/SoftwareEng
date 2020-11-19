@@ -79,13 +79,12 @@ Scenario: Search about home by  price between two number
      
      
   Scenario: Search about home By Combination of at least 2 of the above mentioned scenarios
-    When I search about home by area less than 150 and Greater than 400
-    And I search about home by area less than 150
+    When I search about home by Number of bedrooms 3
+    And I search about home by Number of bathrooms 2
+   And I search about home by type "HOUSE"
+   And I search about home by price less than 200 and Greater than 400
     Then A list of homes that matches the this Combination should be returned and printed on the console
     And email with the result shoud be send to "kgkanassar17@gmail.com"
-    
-    
-    
     
     
     

@@ -15,7 +15,7 @@ import javax.mail.internet.MimeMessage;
 public class Emailservices {
 public void sendEmail(String email, ArrayList<Apartment> result) {
 /*	
-    String to = "ody.qr.2001@gmail.com";
+    String to = "oday.qr.2001@gmail.com";
 
     // Mention the Sender's email address
     String from = "o.qasrawi@stu.najah.edu";
@@ -66,8 +66,8 @@ public void sendEmail(String email, ArrayList<Apartment> result) {
     }
 	
 	
-	
 	*/
+	
 	
 	
 	
