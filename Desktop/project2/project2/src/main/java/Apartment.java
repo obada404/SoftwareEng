@@ -45,14 +45,14 @@ public class Apartment {
 		public void setType(String type) {
 			this.type = type;
 		}
-		public String getLease_Length() {
+		public String getLeaseLength() {
 			return leaseLength;
 		}
-		public void setLease_Length(String lease_Length) {
-			if(lease_Length.equals("6"))
-			leaseLength = "short term_6 months";
+		public void setLeaseLength(String leaseLength) {
+			if(leaseLength.equals("6"))
+			this.leaseLength = "short term_6 months";
 			else 
-				leaseLength = "long term_year";
+				this.leaseLength = "long term_year";
 		}
 		public String getAmenities() {
 			return amenities;
@@ -81,8 +81,8 @@ public class Apartment {
 		public boolean isallowPets() {
 			return allowPets;
 		}
-		public void setallowpets(boolean allow_Pets) {
-			allowPets = allow_Pets;
+		public void setallowpets(boolean allowPets) {
+			this.allowPets = allowPets;
 		}
 		
 		

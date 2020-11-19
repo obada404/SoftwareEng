@@ -12,14 +12,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 public class Test {
-	private  Apartment_search apatment;
+	private  apartmentSearch apatment;
 	private Mockemail mockemail;
-	public Test(Apartment_search apartment,Mockemail Mockemail) {
+	public Test(apartmentSearch apartment,Mockemail Mockemail) {
 		this.apatment=apartment;
 	    mockemail=Mockemail;
 		
 	}
-	public  Apartment_search w =new Apartment_search();
+	public  apartmentSearch w =new apartmentSearch();
 	public  ArrayList <Apartment>cu =new ArrayList<Apartment>();
 	public  ArrayList <Apartment>First =new ArrayList<Apartment>();
 	public  ArrayList <Apartment>s2ed =new ArrayList<Apartment>();
@@ -39,7 +39,7 @@ public class Test {
 	private ArrayList<Apartment> list0= new ArrayList<Apartment>();
 	private ArrayList<Apartment> list = new ArrayList<Apartment>();
 	private ArrayList<Apartment> list2 ;
-	private Apartment_search res;
+	private apartmentSearch res;
 
         @Given("these homes are contained in the system")
 		public void theseHomesAreContainedInTheSystem(io.cucumber.datatable.DataTable dataTable) {
@@ -194,7 +194,7 @@ public class Test {
 		public void aListOfHomesThatMatchesTheLeaseLengthShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	c.getLease_Length().equals(LeaseLength)) {
+			if(	c.getLeaseLength().equals(LeaseLength)) {
 				
 			}
 			else {
@@ -403,7 +403,7 @@ public class Test {
 		public void emailWithTheResultShoudBeSendTo(String string) {
 		    
 			
-			verify(mockemail.getEmailservicse(),times(0)).sendEmail(string,Apartment_search.result);
+			verify(mockemail.getEmailservicse(),times(0)).sendEmail(string,apartmentSearch.result);
 	
 			
 			

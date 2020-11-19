@@ -1,31 +1,31 @@
 
 
-import java.awt.List;
+
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
-//import org.omg.CORBA.RepositoryIdHelper;
 
-public class Apartment_search {
+public class apartmentSearch {
 	
 	
 	
 
-private ArrayList<Apartment> all =new ArrayList<Apartment> () ;
- public static  ArrayList<Apartment> result=new ArrayList<Apartment> () ;
-  private int x ;
-  Mockemail moc =new Mockemail(this );
+private ArrayList<Apartment> all =new ArrayList() ;
+ protected static  ArrayList<Apartment> result = new ArrayList<Apartment> () ;
+
+  //Mockemail moc =new Mockemail(this );
 private   Emailservices emailservices =new Emailservices();
 public void setEmailservices(Emailservices emailservices) {
 	// TODO Auto-generated method stub
 	this.emailservices =emailservices;
 	
 }
-  public ArrayList<Apartment> getAll() {
+  public List<Apartment> getAll() {
 		return all;
 	}
-	public void setAll(ArrayList<Apartment> all) {
-		this.all = all;
+	public void setAll(List<Apartment> all) {
+		this.all = (ArrayList<Apartment>) all;
 	}
 	public void setApartment(String [] st) {
 		Apartment  c =new Apartment();
@@ -38,22 +38,22 @@ public void setEmailservices(Emailservices emailservices) {
 		c.setArea(Integer.valueOf(st[6]));
 		c.setBedrooms(Integer.valueOf(st[7]));
 		c.setBathrooms(Integer.valueOf(st[8]));
-		c.setLease_Length(st[9]);
+		c.setLeaseLength(st[9]);
 		all.add(c);
 		
 	}
 	public static ArrayList<Apartment> getResult() {
-		return result;
+		return (ArrayList<Apartment>) result;
 	}
 	public void setResult(ArrayList<Apartment> result) {
 		this.result = result;
 	}
 
   
-  public Apartment_search() {
+  public apartmentSearch() {
 		super();
   }
-  public Apartment_search(ArrayList<Apartment> all, ArrayList<Apartment> result) {
+  public apartmentSearch(ArrayList<Apartment> all, ArrayList<Apartment> result) {
 	super();
 	this.all = all;
 	this.result = result;
@@ -68,8 +68,8 @@ public ArrayList<Apartment> searchByPlacement(String pla) {
 		  if(x.getPlacement().equals(pla))
 			  result.add(x);
 	  }
-	 emailservices.sendEmail("kgkanassar17@gmail.com", result);
-	  return result;
+	 emailservices.sendEmail("kgkanassar17@gmail.com", (ArrayList<Apartment>) result);
+	  return (ArrayList<Apartment>) result;
   }
 public ArrayList<Apartment> searchByMaterial(String Mat) {
 	/* result.clear();
@@ -99,7 +99,7 @@ public ArrayList<Apartment> searchByMaterial(String Mat) {
 	result=ap;
 
 	emailservices.sendEmail("kgkanassar17@gmail.com", ap);
-	return result;
+	return (ArrayList<Apartment>) result;
 }
 public ArrayList<Apartment> searchByprice(int price) {
 	/* result.clear();
@@ -226,8 +226,8 @@ public ArrayList<Apartment> searchBybathrooms(int numt) {
 			  result.add(x);
 		  }
 	  }
-	emailservices.sendEmail("kgkanassar17@gmail.com", result);
-	  return result;
+	emailservices.sendEmail("kgkanassar17@gmail.com", (ArrayList<Apartment>) result);
+	  return (ArrayList<Apartment>) result;
 }
 public ArrayList<Apartment> searchByAllow_Pets(String  string) {
 	 result.clear();
@@ -237,8 +237,8 @@ public ArrayList<Apartment> searchByAllow_Pets(String  string) {
 		  else if(x.isallowPets()&&string.equals("yes"))
 			  result.add(x);
 	  }
-	 emailservices.sendEmail("kgkanassar17@gmail.com", result);
-	  return result;
+	 emailservices.sendEmail("kgkanassar17@gmail.com", (ArrayList<Apartment>) result);
+	  return (ArrayList<Apartment>) result;
 }
 public ArrayList<Apartment> searchByType(String Type) {
 	 result.clear();
@@ -249,20 +249,20 @@ public ArrayList<Apartment> searchByType(String Type) {
 	  }
 	 
 	 
-      emailservices.sendEmail("oday.qr.2001@gmail.com", result);
+      emailservices.sendEmail("oday.qr.2001@gmail.com", (ArrayList<Apartment>) result);
 	 
-	  return result;
+	  return (ArrayList<Apartment>) result;
 	 
 }
 public ArrayList<Apartment> searchByLease_Length(String Len) {
 	 result.clear();
 	 for(Apartment x:all)
 	  {
-		  if(x.getLease_Length().equals(Len))
+		  if(x.getLeaseLength().equals(Len))
 			  result.add(x);
 	  }
-	emailservices.sendEmail("kgkanassar17@gmail.com", result);
-	  return result;
+	emailservices.sendEmail("kgkanassar17@gmail.com", (ArrayList<Apartment>) result);
+	  return (ArrayList<Apartment>) result;
 }
 public ArrayList<Apartment> searchByAmenities(String strings) {
 	 result.clear();
@@ -273,8 +273,8 @@ public ArrayList<Apartment> searchByAmenities(String strings) {
 	  }
 		  
 	  
-	 emailservices.sendEmail("kgkanassar17@gmail.com", result); 
-	 return result;
+	 emailservices.sendEmail("kgkanassar17@gmail.com", (ArrayList<Apartment>) result);
+	 return (ArrayList<Apartment>) result;
 	
 }
 public void print(ArrayList<Apartment> e) {
