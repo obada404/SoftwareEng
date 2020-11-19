@@ -245,7 +245,7 @@ public class Test {
 		public void aListOfHomesThatMatchesTheAllowPetsShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(!(c.isAllow_Pets())) {
+			if(!(c.isallowPets())) {
 		
 				asrt =false ;
 			}
