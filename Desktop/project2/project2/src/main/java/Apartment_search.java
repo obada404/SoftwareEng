@@ -97,10 +97,10 @@ public ArrayList<Apartment> searchByMaterial(String Mat) {
 		
 	}
 	result=ap;
-	if(!result.equals(null)) {
-	emailservices.sendEmail("kgkanassar17@gmail.com", ap);}
+
+	emailservices.sendEmail("kgkanassar17@gmail.com", ap);
 	return result;
-  }
+}
 public ArrayList<Apartment> searchByprice(int price) {
 	/* result.clear();
 	 for(Apartment x:all)
@@ -162,20 +162,13 @@ public ArrayList<Apartment> searchByRangeOfPrices(int price1,int price2) {
 		
 	}
 	result=ap;
-	if(!result.equals(null)) {
-	emailservices.sendEmail("kgkanassar17@gmail.com", ap);}
+
+	emailservices.sendEmail("kgkanassar17@gmail.com", ap);
 	return ap;
 }
 public ArrayList<Apartment> searchByArea(int Area) {
 	
-/*	 result.clear();
-	 for(Apartment x:all)
-	  {
-		  if(x.getArea()==Area)
-			  result.add(x);
-	  }
-	// emailservices.sendEmail("kgkanassar17@gmail.com", result);
-	  return result;*/
+
 	ArrayList<Apartment> ap=new ArrayList<Apartment>();
 	
 	Iterator<Apartment> it =all.iterator();
@@ -187,19 +180,12 @@ public ArrayList<Apartment> searchByArea(int Area) {
 		
 	}
 	result=ap;
-	if(!result.equals(null)) {
-	emailservices.sendEmail("kgkanassar17@gmail.com", ap);}
+	
+	emailservices.sendEmail("kgkanassar17@gmail.com", ap);
 	return ap;
 }
 public ArrayList<Apartment> searchByRangeOfAreas(int Area1,int Area2) {
-	/* result.clear();
-	 for(Apartment x:all)
-	  {
-		  if(between(x.getArea(),Area1,Area2))
-			  result.add(x);
-	  }
-//	 emailservices.sendEmail("kgkanassar17@gmail.com", result);
-	  return result;*/
+	
 	ArrayList<Apartment> ap=new ArrayList<Apartment>();
 	
 	Iterator<Apartment> it =all.iterator();
@@ -211,19 +197,12 @@ public ArrayList<Apartment> searchByRangeOfAreas(int Area1,int Area2) {
 		
 	}
 	result=ap;
-	if(!result.equals(null)) {
-	emailservices.sendEmail("kgkanassar17@gmail.com", ap);}
+
+	emailservices.sendEmail("kgkanassar17@gmail.com", ap);
 	return ap;
 }
 public ArrayList<Apartment> searchBybedrooms(int numd) {
-	/* result.clear();
-	 for(Apartment x:all)
-	  {
-		  if(x.getBedrooms()==numd)
-			  result.add(x);
-	  }
-	// emailservices.sendEmail("kgkanassar17@gmail.com", result);
-	  return result;*/
+	
 	ArrayList<Apartment> ap=new ArrayList<Apartment>();
 	
 	Iterator<Apartment> it =all.iterator();
@@ -235,8 +214,8 @@ public ArrayList<Apartment> searchBybedrooms(int numd) {
 		
 	}
 	result=ap;
-	if(!result.equals(null)) {
-	emailservices.sendEmail("kgkanassar17@gmail.com", ap);}
+	
+	emailservices.sendEmail("kgkanassar17@gmail.com", ap);
 	return ap;
 }
 public ArrayList<Apartment> searchBybathrooms(int numt) {
