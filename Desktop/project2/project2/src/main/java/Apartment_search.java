@@ -32,7 +32,7 @@ public void setEmailservices(Emailservices emailservices) {
 		c.setType(st[0]);
 		c.setMaterial(st[1]);
 		c.setPlacement(st[2]);
-		c.setAllow_Pets( !st[3].equals("NO"));
+		c.setallowpets( !st[3].equals("NO"));
 		c.setAmenities(st[4]);
 		c.setPrice(Integer.valueOf(st[5]));
 		c.setArea(Integer.valueOf(st[6]));
@@ -232,9 +232,9 @@ public ArrayList<Apartment> searchBybathrooms(int numt) {
 public ArrayList<Apartment> searchByAllow_Pets(String  string) {
 	 result.clear();
 	 for(Apartment x:all) {
-		  if((!x.isAllow_Pets())&&string.equals("no"))
+		  if((!x.isallowPets())&&string.equals("no"))
 			  result.add(x);
-		  else if(x.isAllow_Pets()&&string.equals("yes"))
+		  else if(x.isallowPets()&&string.equals("yes"))
 			  result.add(x);
 	  }
 	 emailservices.sendEmail("kgkanassar17@gmail.com", result);
