@@ -182,7 +182,7 @@ public List<Apartment> searchBybathrooms(int numt) {
 		  }
 	  }
 	emailservices.sendEmail( (ArrayList<Apartment>) result);
-	  return (ArrayList<Apartment>) result;
+	  return result;
 }
 public List<Apartment> searchByAllowPets(String  string) {
 	 result.clear();
@@ -193,7 +193,7 @@ public List<Apartment> searchByAllowPets(String  string) {
 			  result.add(x);
 	  }
 	 emailservices.sendEmail((ArrayList<Apartment>) result);
-	  return (ArrayList<Apartment>) result;
+	  return result;
 }
 public List<Apartment> searchByType(String type) {
 	 result.clear();
@@ -206,7 +206,7 @@ public List<Apartment> searchByType(String type) {
 	 
       emailservices.sendEmail( (ArrayList<Apartment>) result);
 	 
-	  return (ArrayList<Apartment>) result;
+	  return result;
 	 
 }
 public List<Apartment> searchByLeaseLength(String len) {
@@ -217,7 +217,7 @@ public List<Apartment> searchByLeaseLength(String len) {
 			  result.add(x);
 	  }
 	emailservices.sendEmail( (ArrayList<Apartment>) result);
-	  return (ArrayList<Apartment>) result;
+	  return result;
 }
 public List<Apartment> searchByAmenities(String strings) {
 	 result.clear();
@@ -229,7 +229,7 @@ public List<Apartment> searchByAmenities(String strings) {
 		  
 	  
 	 emailservices.sendEmail( (ArrayList<Apartment>) result);
-	 return (ArrayList<Apartment>) result;
+	 return result;
 	
 }
 public void print(List<Apartment> e) {
