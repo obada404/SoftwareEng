@@ -2,10 +2,10 @@ package packagemain;
 
 import static org.mockito.Mockito.*;
 public class Mockemail {
-	
-	
-	
-private Emailservices emailservicse=mock(Emailservices.class);
+
+
+	Emailservices a =new Emailservices();
+private Emailservices emailservicse=mock(a.getClass());
 
 
 

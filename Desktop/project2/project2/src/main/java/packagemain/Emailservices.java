@@ -52,7 +52,7 @@ try {
     String h= result.toString();
     message.setText(h);
 }
-catch (Exception e){
+catch (NullPointerException e){
 
 }
 
@@ -68,7 +68,7 @@ catch (Exception e){
         Transport.send(message);
        log.info("Sent message successfully....");
     } catch (MessagingException mex) {
-        mex.printStackTrace();
+
     }
 	
 	

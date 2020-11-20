@@ -22,7 +22,7 @@ private List<Apartment> all = new ArrayList<>();
 	protected static List<Apartment> result = new ArrayList<>();
 
 
-private   Emailservices emailservices =new Emailservices();
+private Emailservices emailservices =mock(Emailservices.class) ;
 public void setEmailservices(Emailservices emailservices) {
 
 	this.emailservices =emailservices;
