@@ -300,7 +300,7 @@ public class Test {
 			cu.clear();
 			AreaLessThan =int1;
 			cu.addAll( w.searchByRangeOfAreas(0, int1));
-			First =last(cu);	// last_senrio(cu);
+			First =last(cu);
 		}
 		@Then("A list of homes that matches the area specification should be returned and printed on the console")
 		public void aListOfHomesThatMatchesTheAreaSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
@@ -328,7 +328,7 @@ public class Test {
 			AndGreaterThan=int1;
 			  PriceLessThanAnd=int2;
 			cu.addAll( w.searchByRangeOfPrices(int1, int2));
-			First =last(cu);//	 last_senrio(cu);
+			First =last(cu);
 		}
 
 
@@ -357,7 +357,7 @@ public class Test {
 			AreaGreaterThan=int1;
 			cu.clear();
 			cu.addAll(  w.searchByRangeOfAreas(int1, int2));
-			First =last(cu);//	 last_senrio(cu);
+			First =last(cu);
 		}
 
 
@@ -377,7 +377,7 @@ public class Test {
 			
 			assertTrue(asrt);
 			System.out.println("iSearchAboutHomeByAreaLessThanAndGreaterThan");
-			 w.print(cu);
+			System.out.println( w.print(cu));
 		}
 		
 	
@@ -385,7 +385,8 @@ public class Test {
 		@Then("A list of homes that matches the this Combination should be returned and printed on the console")
 		public void aListOfHomesThatMatchesTheThisCombinationShouldBeReturnedAndPrintedOnTheConsole() {
 			System.out.println(" last sinario");
-			w.print(First);
+
+			System.out.println(w.print(First));
 		}
 		
 		
