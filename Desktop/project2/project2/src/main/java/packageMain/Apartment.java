@@ -1,4 +1,4 @@
-
+package packageMain;
 
 public class Apartment {
 	
@@ -89,7 +89,7 @@ public class Apartment {
 		
 		@Override
 		public String toString() {
-			return "Apartment [Placement=" + placement + ", Material=" + material + ", Price=" + price + ", type=" + type
+			return "packageMain.Apartment [Placement=" + placement + ", Material=" + material + ", Price=" + price + ", type=" + type
 					+ ", Lease_Length=" + leaseLength + ", Amenities=" + amenities + ", Area=" + area + ", bedrooms="
 					+ bedrooms + ", bathrooms=" + bathrooms + ", Allow_Pets=" + allowPets + "]";
 		}

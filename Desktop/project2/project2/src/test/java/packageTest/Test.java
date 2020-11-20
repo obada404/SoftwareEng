@@ -1,34 +1,34 @@
+package packageTest;
 
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import packageMain.Apartment;
+import packageMain.Mockemail;
+import packageMain.apartmentSearch;
+
 public class Test {
-	private  apartmentSearch apatment;
-	private Mockemail mockemail;
-	public Test(apartmentSearch apartment,Mockemail Mockemail) {
+	protected final apartmentSearch apatment;
+	private final Mockemail mockemail;
+	public Test(apartmentSearch apartment, Mockemail Mockemail) {
 		this.apatment=apartment;
 	    mockemail=Mockemail;
 		
 	}
 	public  apartmentSearch w =new apartmentSearch();
-	public  ArrayList <Apartment>cu =new ArrayList<Apartment>();
-	public  ArrayList <Apartment>First =new ArrayList<Apartment>();
-	public  ArrayList <Apartment>s2ed =new ArrayList<Apartment>();
-	public  ArrayList <ArrayList<Apartment>>all =new ArrayList<ArrayList<Apartment>>();
-	private   Map<String, String> table=new HashMap<String, String>();
+	public  ArrayList <Apartment>cu = new ArrayList<>();
+	public  ArrayList <Apartment>First = new ArrayList<>();
 	private  String ByType,Material,Placement ,LeaseLength;
 	private	int PriceLessThan;
 	private String Amenities;
-	private String AllowPets;
+	public String AllowPets;
 	private int NumberOfBedrooms;
 	private int NumberOfBathrooms;
 	private int AreaLessThan;
@@ -36,20 +36,18 @@ public class Test {
 	private int AndGreaterThan;
 	private int AreaGreaterThan;
 	boolean last =false;
-	private ArrayList<Apartment> list0= new ArrayList<Apartment>();
-	private ArrayList<Apartment> list = new ArrayList<Apartment>();
-	private ArrayList<Apartment> list2 ;
-	private apartmentSearch res;
+	private final ArrayList<Apartment> list0= new ArrayList<>();
+	private ArrayList<Apartment> list = new ArrayList<>();
 
-        @Given("these homes are contained in the system")
+	@Given("these homes are contained in the system")
 		public void theseHomesAreContainedInTheSystem(io.cucumber.datatable.DataTable dataTable) {
-			
-		
-			table =  dataTable.asMap(String.class, String.class);
+
+
+			Map<String, String> table = dataTable.asMap(String.class, String.class);
 			String[] arr  =new String[10];
 			
-			for(Entry<String, String> ent:table.entrySet()) {
-			//	System.out.println(ent.getKey());
+			for(Entry<String, String> ent: table.entrySet()) {
+
 				System.arraycopy(ent.getKey().split("_"), 0	, arr, 0, 5);
 				System.arraycopy(ent.getValue().split("_"), 0, arr, 5, 5);
 			    w.setApartment(arr);
@@ -58,25 +56,14 @@ public class Test {
 		}
 
 
-   /* 	private  void last_senrio(ArrayList <Apartment>cu) {
-			if(First ==null)
-				First =cu;
-			else
-				s2ed =cu;
-			
-			if(!( First ==null) && !(s2ed ==null))
-				First= intersection(First,s2ed);
-			 
-			s2ed =null;
-				
-		}*/
+
 		@When("I search about home by type {string}")
 		public void iSearchAboutHomeByType(String string) {
 			cu.clear();
 			ByType =string;
 		cu.addAll(w.searchByType(ByType));
 		First =last(cu);
-	//	 last_senrio(cu);
+
 	
 		
 		}
@@ -88,12 +75,11 @@ public class Test {
 		public void aListOfHomesThatMatchesTheTypeSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	c.getType().equals( ByType)	) {
-				
-			}
-			else {
-				asrt =false ;
-			}
+				if (!(c.getType().equals(ByType))) {
+
+					asrt = false;
+					break;
+				}
 			
 				}
 			
@@ -119,12 +105,11 @@ public class Test {
 		public void aListOfHomesThatMatchesThePriceSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	c.getPrice()<PriceLessThan	) {
-				
-			}
-			else {
-				asrt =false ;
-			}
+				if (!(c.getPrice() < PriceLessThan)) {
+
+					asrt = false;
+					break;
+				}
 			
 				}
 			
@@ -144,12 +129,11 @@ public class Test {
 		public void aListOfHomesThatMatchesTheMaterialSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	c.getMaterial().equals(Material)	) {
-				
-			}
-			else {
-				asrt =false ;
-			}
+				if (!(c.getMaterial().equals(Material))) {
+
+					asrt = false;
+					break;
+				}
 			
 				}
 			
@@ -170,12 +154,12 @@ public class Test {
 		public void aListOfHomesThatMatchesThePlacementSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	c.getPlacement().equals(Placement)) {
-				
-			}
-			else {
-				asrt =false ;
-			}
+				if (!(c.getPlacement().equals(Placement))) {
+
+
+					asrt = false;
+					break;
+				}
 			
 				}
 			
@@ -194,12 +178,12 @@ public class Test {
 		public void aListOfHomesThatMatchesTheLeaseLengthShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	c.getLeaseLength().equals(LeaseLength)) {
-				
-			}
-			else {
-				asrt =false ;
-			}
+				if (!(c.getLeaseLength().equals(LeaseLength))) {
+
+
+					asrt = false;
+					break;
+				}
 			
 				}
 			
@@ -218,10 +202,11 @@ public class Test {
 		public void aListOfHomesThatMatchesTheAmenitiesShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	!(c.getAmenities().equals(Amenities))) {
-	
-				asrt =false ;
-			}
+				if (!(c.getAmenities().equals(Amenities))) {
+
+					asrt = false;
+					break;
+				}
 			
 				}
 			
@@ -268,10 +253,11 @@ public class Test {
 		public void aListOfHomesThatMatchesTheNumberOfBedroomsShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	!(c.getBedrooms()==NumberOfBedrooms)) {
-				
-				asrt =false ;
-			}
+				if (!(c.getBedrooms() == NumberOfBedrooms)) {
+
+					asrt = false;
+					break;
+				}
 			
 				}
 			
@@ -292,10 +278,11 @@ public class Test {
 		public void aListOfHomesThatMatchesTheNumberOfBathroomsShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	!(c.getBathrooms()==NumberOfBathrooms)) {
-				
-				asrt =false ;
-			}
+				if (!(c.getBathrooms() == NumberOfBathrooms)) {
+
+					asrt = false;
+					break;
+				}
 			
 				}
 			
@@ -319,10 +306,11 @@ public class Test {
 		public void aListOfHomesThatMatchesTheAreaSpecificationShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	!(c.getArea()<=AreaLessThan)) {
-				
-				asrt =false ;
-			}
+				if (!(c.getArea() <= AreaLessThan)) {
+
+					asrt = false;
+					break;
+				}
 			
 				}
 			System.out.println("iSearchAboutHomeByAreaLessThan");
@@ -349,10 +337,11 @@ public class Test {
 		public void aListOfHomesThatMatchesThePriceShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	!(  (AndGreaterThan<=c.getPrice()) &&  (c.getPrice()<=PriceLessThanAnd ))) {
-				
-				asrt =false ;
-			}
+				if (!((AndGreaterThan <= c.getPrice()) && (c.getPrice() <= PriceLessThanAnd))) {
+
+					asrt = false;
+					break;
+				}
 			
 				}
 			System.out.println("iSearchAboutHomeByPriceLessThanAndGreaterThan");	
@@ -378,10 +367,11 @@ public class Test {
 		public void aListOfHomesThatMatchesTheAreaShouldBeReturnedAndPrintedOnTheConsole() {
 			boolean asrt= true ;
 			for(Apartment c :cu) {
-			if(	!(  AreaGreaterThan<=c.getArea() &&  c.getArea()<=AreaLessThan )) {
-				
-				asrt =false ;
-			}
+				if (!(AreaGreaterThan <= c.getArea() && c.getArea() <= AreaLessThan)) {
+
+					asrt = false;
+					break;
+				}
 			
 				}
 			
@@ -422,11 +412,11 @@ public class Test {
 			
 			}
 			else {
+
+				ArrayList<Apartment> list2 = (ArrayList<Apartment>) list0.clone();
 				
-				list2 =(ArrayList<Apartment>) list0.clone();
 				
-				
-				list=	(ArrayList<Apartment>) intersection(list,list2);
+				list= intersection(list, list2);
 			}
 			
 			
@@ -436,7 +426,7 @@ public class Test {
 		}
 		
 	    public <T>  ArrayList<T> intersection( ArrayList<T> list1,  ArrayList<T> list2) {
-	        ArrayList<T> list = new ArrayList<T>();
+	        ArrayList<T> list = new ArrayList<>();
 
 	        for (T t : list1) {
 	            if( list2.contains(t)) {

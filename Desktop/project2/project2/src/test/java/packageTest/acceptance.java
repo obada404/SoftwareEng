@@ -1,3 +1,4 @@
+package packageTest;
 
 import org.junit.runner.RunWith;
 

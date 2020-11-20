@@ -1,3 +1,4 @@
+package packageMain;
 
 
 
@@ -12,9 +13,9 @@ public class apartmentSearch {
 	
 
 private ArrayList<Apartment> all =new ArrayList() ;
- protected static  ArrayList<Apartment> result = new ArrayList<Apartment> () ;
+ public static  ArrayList<Apartment> result = new ArrayList<>() ;
 
-  //Mockemail moc =new Mockemail(this );
+  //packageMain.Mockemail moc =new packageMain.Mockemail(this );
 private   Emailservices emailservices =new Emailservices();
 public void setEmailservices(Emailservices emailservices) {
 	// TODO Auto-generated method stub
@@ -34,16 +35,16 @@ public void setEmailservices(Emailservices emailservices) {
 		c.setPlacement(st[2]);
 		c.setallowpets( !st[3].equals("NO"));
 		c.setAmenities(st[4]);
-		c.setPrice(Integer.valueOf(st[5]));
-		c.setArea(Integer.valueOf(st[6]));
-		c.setBedrooms(Integer.valueOf(st[7]));
-		c.setBathrooms(Integer.valueOf(st[8]));
+		c.setPrice(Integer.parseInt(st[5]));
+		c.setArea(Integer.parseInt(st[6]));
+		c.setBedrooms(Integer.parseInt(st[7]));
+		c.setBathrooms(Integer.parseInt(st[8]));
 		c.setLeaseLength(st[9]);
 		all.add(c);
 		
 	}
 	public static ArrayList<Apartment> getResult() {
-		return (ArrayList<Apartment>) result;
+		return result;
 	}
 	public void setResult(ArrayList<Apartment> result) {
 		this.result = result;
@@ -73,7 +74,7 @@ public ArrayList<Apartment> searchByPlacement(String pla) {
   }
 public ArrayList<Apartment> searchByMaterial(String Mat) {
 	/* result.clear();
-	  for(Apartment x:all)
+	  for(packageMain.Apartment x:all)
 	  {
 		  if(x.getMaterial().equals(Mat))
 			  result.add(x);
@@ -103,7 +104,7 @@ public ArrayList<Apartment> searchByMaterial(String Mat) {
 }
 public ArrayList<Apartment> searchByprice(int price) {
 	/* result.clear();
-	 for(Apartment x:all)
+	 for(packageMain.Apartment x:all)
 	  {
 		  if(x.getPrice()==price)
 			  result.add(x);
@@ -141,7 +142,7 @@ public ArrayList<Apartment> searchByprice(int price) {
 }
 public ArrayList<Apartment> searchByRangeOfPrices(int price1,int price2) {
 	/* result.clear();
-	 for(Apartment x:all)
+	 for(packageMain.Apartment x:all)
 	  {
 		  if(between(x.getPrice(),price1,price2))
 			  result.add(x);
