@@ -232,15 +232,17 @@ public List<Apartment> searchByAmenities(String strings) {
 	 return result;
 	
 }
-public void print(List<Apartment> e) {
+public String print(List<Apartment> e) {
+	String a ="" ;
 	for(Apartment g : e) {
-		System.out.println(g.toString());
+		a.concat(g.toString());
 
 	}
 	if(e.isEmpty())
-	System.out.println( "no result");
+		a.concat( "no result");
 
-	System.out.println(  );
+	a.concat( "\n");
+	return a;
 
 }
 

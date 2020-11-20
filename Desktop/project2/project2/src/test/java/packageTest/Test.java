@@ -86,7 +86,7 @@ public class Test {
 			assertTrue(asrt);
 			System.out.println("iSearchAboutHomeByType ");
 
-			w.print(cu);
+			System.out.println( w.print(cu));
 			
 		  
 		}
@@ -115,7 +115,7 @@ public class Test {
 			
 			assertTrue(asrt);
 			System.out.println("iSearchAboutHomeWithPriceLessThan ");
-			w.print(cu);
+			System.out.println( w.print(cu));
 		}
 		@When("I search about home by Material {string}")
 		public void iSearchAboutHomeByMaterial(String string) {
@@ -139,7 +139,7 @@ public class Test {
 			
 			assertTrue(asrt);
 			System.out.println("iSearchAboutHomeByMaterial ");
-			w.print(cu);
+			System.out.println( w.print(cu));
 		}
 
 		
@@ -165,7 +165,7 @@ public class Test {
 			
 			assertTrue(asrt);
 			System.out.println("iSearchAboutHomeByPlacement ");
-			w.print(cu);
+			System.out.println( w.print(cu));
 		}
 		@When("I search about home by Lease Length  {string}")
 		public void iSearchAboutHomeByLeaseLength(String string) {
@@ -189,7 +189,7 @@ public class Test {
 			
 			assertTrue(asrt);
 			System.out.println("iSearchAboutHomeByLeaseLength ");
-			w.print(cu);
+			System.out.println( w.print(cu));
 		}
 		@When("I search about home by Amenities {string}")
 		public void iSearchAboutHomeByAmenities(String string) {
@@ -213,7 +213,7 @@ public class Test {
 			assertTrue(asrt);
 	 		System.out.println("iSearchAboutHomeByAmenities");
 
-			w.print(cu);
+			System.out.println( w.print(cu));
 		}
 		
 		@When("I search about home by  Allow Pets {string}")
@@ -239,7 +239,7 @@ public class Test {
 			
 			assertTrue(asrt);
 	 		System.out.println("iSearchAboutHomeByAllowPets");
-			w.print(cu);
+			System.out.println( w.print(cu));
 		}
 		@When("I search about home by Number of bedrooms {int}")
 		public void iSearchAboutHomeByNumberOfBedrooms(Integer int1) {
@@ -264,7 +264,7 @@ public class Test {
 			assertTrue(asrt);
 	 		System.out.println("iSearchAboutHomeByNumberOfBedrooms");
 
-			w.print(cu);
+			System.out.println( w.print(cu));
 			
 		}
 		@When("I search about home by Number of bathrooms {int}")
@@ -288,7 +288,7 @@ public class Test {
 			
 			assertTrue(asrt);
 			System.out.println("iSearchAboutHomeByNumberOfBathrooms");
-         w.print(cu);
+			System.out.println( w.print(cu));
  	
 		}
 
@@ -314,7 +314,7 @@ public class Test {
 			
 				}
 			System.out.println("iSearchAboutHomeByAreaLessThan");
-			w.print(cu);
+			System.out.println( w.print(cu));
 			assertTrue(asrt);
 		
 			
@@ -344,8 +344,8 @@ public class Test {
 				}
 			
 				}
-			System.out.println("iSearchAboutHomeByPriceLessThanAndGreaterThan");	
-			 w.print(cu);
+			System.out.println("iSearchAboutHomeByPriceLessThanAndGreaterThan");
+			System.out.println( w.print(cu));
 			assertTrue(asrt);
 
 
