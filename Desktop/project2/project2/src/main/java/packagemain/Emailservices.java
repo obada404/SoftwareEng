@@ -48,9 +48,14 @@ public void sendEmail( List <Apartment> result) {
     		  message.setText("empty");
     	  }
      
+try {
+    String h= result.toString();
+    message.setText(h);
+}
+catch (Exception e){
 
-    	  String h= result.toString();
-    	  message.setText(h);
+}
+
 
 
 

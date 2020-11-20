@@ -1,23 +1,25 @@
 package packageTest;
 
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import packagemain.Apartment;
+import packagemain.ApartmentSearch;
+import packagemain.Mockemail;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import packagemain.Apartment;
-import packagemain.Mockemail;
-import packagemain.ApartmentSearch;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
-public class Test {
+public class data {
 	protected final ApartmentSearch apatment;
 	private final Mockemail mockemail;
-	public Test(ApartmentSearch apartment, Mockemail Mockemail) {
+	public data(ApartmentSearch apartment, Mockemail Mockemail) {
 		this.apatment=apartment;
 	    mockemail=Mockemail;
 		

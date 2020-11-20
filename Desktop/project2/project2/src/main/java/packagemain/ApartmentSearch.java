@@ -238,9 +238,9 @@ public String print(List<Apartment> e) {
 		a=a.concat(g.toString());
 
 	}
-	if(e.isEmpty())
-	a=	a.concat( "no result");
-
+	if(e.isEmpty()) {
+		a = a.concat("no result");
+	}
 	a=a.concat( "\n");
 	return a;
 
