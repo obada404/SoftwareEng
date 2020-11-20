@@ -393,7 +393,7 @@ public class Test {
 		public void emailWithTheResultShoudBeSendTo(String string) {
 		    
 			
-			verify(mockemail.getEmailservicse(),times(0)).sendEmail(string, (ArrayList<Apartment>) ApartmentSearch.getResult());
+			verify(mockemail.getEmailservicse(),times(0)).sendEmail((ArrayList<Apartment>) ApartmentSearch.getResult());
 	
 			
 			
