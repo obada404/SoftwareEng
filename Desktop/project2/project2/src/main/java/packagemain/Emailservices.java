@@ -43,7 +43,7 @@ public void sendEmail( List <Apartment> result) {
      
   
     	  message.setSubject("this is the sub");
-    	  boolean f=(result.equals(null));
+    	  boolean f=(result==null);
     	 	  if (f) {
     		  message.setText("empty");
     	  }
