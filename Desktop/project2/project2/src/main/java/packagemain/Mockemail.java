@@ -1,4 +1,4 @@
-package packageMain;
+package packagemain;
 
 import static org.mockito.Mockito.*;
 public class Mockemail {
@@ -9,7 +9,7 @@ private Emailservices emailservicse=mock(Emailservices.class);
 
 
 
-public Mockemail(apartmentSearch apa) {
+public Mockemail(apartmentsearch apa) {
 	apa.setEmailservices(emailservicse);
 	
 	

@@ -1,4 +1,4 @@
-package packageMain;
+package packagemain;
 
 
 
@@ -7,15 +7,20 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class apartmentSearch {
+public class apartmentsearch {
 	
 	
 	
 
-private ArrayList<Apartment> all =new ArrayList() ;
- public static  ArrayList<Apartment> result = new ArrayList<>() ;
+private ArrayList<Apartment> all;
 
-  //packageMain.Mockemail moc =new packageMain.Mockemail(this );
+	{
+		all = new ArrayList();
+	}
+
+	public static  ArrayList<Apartment> result = new ArrayList<>() ;
+
+  //packagemain.Mockemail moc =new packagemain.Mockemail(this );
 private   Emailservices emailservices =new Emailservices();
 public void setEmailservices(Emailservices emailservices) {
 	// TODO Auto-generated method stub
@@ -51,10 +56,10 @@ public void setEmailservices(Emailservices emailservices) {
 	}
 
   
-  public apartmentSearch() {
+  public apartmentsearch() {
 		super();
   }
-  public apartmentSearch(ArrayList<Apartment> all, ArrayList<Apartment> result) {
+  public apartmentsearch(ArrayList<Apartment> all, ArrayList<Apartment> result) {
 	super();
 	this.all = all;
 	this.result = result;
@@ -74,7 +79,7 @@ public ArrayList<Apartment> searchByPlacement(String pla) {
   }
 public ArrayList<Apartment> searchByMaterial(String Mat) {
 	/* result.clear();
-	  for(packageMain.Apartment x:all)
+	  for(packagemain.Apartment x:all)
 	  {
 		  if(x.getMaterial().equals(Mat))
 			  result.add(x);
@@ -104,7 +109,7 @@ public ArrayList<Apartment> searchByMaterial(String Mat) {
 }
 public ArrayList<Apartment> searchByprice(int price) {
 	/* result.clear();
-	 for(packageMain.Apartment x:all)
+	 for(packagemain.Apartment x:all)
 	  {
 		  if(x.getPrice()==price)
 			  result.add(x);
@@ -142,7 +147,7 @@ public ArrayList<Apartment> searchByprice(int price) {
 }
 public ArrayList<Apartment> searchByRangeOfPrices(int price1,int price2) {
 	/* result.clear();
-	 for(packageMain.Apartment x:all)
+	 for(packagemain.Apartment x:all)
 	  {
 		  if(between(x.getPrice(),price1,price2))
 			  result.add(x);

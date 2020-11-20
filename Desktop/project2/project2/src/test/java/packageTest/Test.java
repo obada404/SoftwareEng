@@ -10,19 +10,19 @@ import java.util.Map.Entry;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import packageMain.Apartment;
-import packageMain.Mockemail;
-import packageMain.apartmentSearch;
+import packagemain.Apartment;
+import packagemain.Mockemail;
+import packagemain.apartmentsearch;
 
 public class Test {
-	protected final apartmentSearch apatment;
+	protected final apartmentsearch apatment;
 	private final Mockemail mockemail;
-	public Test(apartmentSearch apartment, Mockemail Mockemail) {
+	public Test(apartmentsearch apartment, Mockemail Mockemail) {
 		this.apatment=apartment;
 	    mockemail=Mockemail;
 		
 	}
-	public  apartmentSearch w =new apartmentSearch();
+	public apartmentsearch w =new apartmentsearch();
 	public  ArrayList <Apartment>cu = new ArrayList<>();
 	public  ArrayList <Apartment>First = new ArrayList<>();
 	private  String ByType,Material,Placement ,LeaseLength;
@@ -393,7 +393,7 @@ public class Test {
 		public void emailWithTheResultShoudBeSendTo(String string) {
 		    
 			
-			verify(mockemail.getEmailservicse(),times(0)).sendEmail(string,apartmentSearch.result);
+			verify(mockemail.getEmailservicse(),times(0)).sendEmail(string, apartmentsearch.result);
 	
 			
 			
