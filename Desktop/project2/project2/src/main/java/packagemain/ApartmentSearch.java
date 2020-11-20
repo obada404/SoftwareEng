@@ -7,23 +7,20 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class apartmentsearch {
+public class ApartmentSearch {
 	
 	
 	
 
-private ArrayList<Apartment> all;
+private List<Apartment> all = new ArrayList();
 
-	{
-		all = new ArrayList();
-	}
 
-	public static  ArrayList<Apartment> result = new ArrayList<>() ;
+	public static  List<Apartment> result = new ArrayList<>();
 
-  //packagemain.Mockemail moc =new packagemain.Mockemail(this );
+
 private   Emailservices emailservices =new Emailservices();
 public void setEmailservices(Emailservices emailservices) {
-	// TODO Auto-generated method stub
+
 	this.emailservices =emailservices;
 	
 }
@@ -49,17 +46,17 @@ public void setEmailservices(Emailservices emailservices) {
 		
 	}
 	public static ArrayList<Apartment> getResult() {
-		return result;
+		return (ArrayList<Apartment>) result;
 	}
 	public void setResult(ArrayList<Apartment> result) {
 		this.result = result;
 	}
 
   
-  public apartmentsearch() {
+  public ApartmentSearch() {
 		super();
   }
-  public apartmentsearch(ArrayList<Apartment> all, ArrayList<Apartment> result) {
+  public ApartmentSearch(ArrayList<Apartment> all, ArrayList<Apartment> result) {
 	super();
 	this.all = all;
 	this.result = result;
@@ -78,20 +75,7 @@ public ArrayList<Apartment> searchByPlacement(String pla) {
 	  return (ArrayList<Apartment>) result;
   }
 public ArrayList<Apartment> searchByMaterial(String Mat) {
-	/* result.clear();
-	  for(packagemain.Apartment x:all)
-	  {
-		  if(x.getMaterial().equals(Mat))
-			  result.add(x);
-	  }
-	  if(result!=null) {
-			 emailservices.sendEmail("kgkanassar17@gmail.com", result);
-		 }
-		 if(!result.equals(null)) {
-			 emailservices.sendEmail("kgkanassar17@gmail.com", result);
-		 }
-	  return result;*/
-	
+
 	
 	ArrayList<Apartment> ap=new ArrayList<Apartment>();
 	Iterator<Apartment> it =all.iterator();
@@ -108,25 +92,7 @@ public ArrayList<Apartment> searchByMaterial(String Mat) {
 	return (ArrayList<Apartment>) result;
 }
 public ArrayList<Apartment> searchByprice(int price) {
-	/* result.clear();
-	 for(packagemain.Apartment x:all)
-	  {
-		  if(x.getPrice()==price)
-			  result.add(x);
-	  }
-	 
-	 if(result!=null) {
-		 emailservices.sendEmail("kgkanassar17@gmail.com", result);
-	 }
-	 if(!result.equals(null)) {
-		 emailservices.sendEmail("kgkanassar17@gmail.com", result);
-	 }
-	 
-	  
-	  
-	  return result;
-	  
-	  */
+
 
 	ArrayList<Apartment> ap=new ArrayList<Apartment>();
 	
@@ -146,16 +112,6 @@ public ArrayList<Apartment> searchByprice(int price) {
 	  
 }
 public ArrayList<Apartment> searchByRangeOfPrices(int price1,int price2) {
-	/* result.clear();
-	 for(packagemain.Apartment x:all)
-	  {
-		  if(between(x.getPrice(),price1,price2))
-			  result.add(x);
-	  }
-	
-	 if(!result.equals(null)) {
-	//	 emailservices.sendEmail("kgkanassar17@gmail.com", result);
-	 }	  return result;*/
 
 	ArrayList<Apartment> ap=new ArrayList<Apartment>();
 	

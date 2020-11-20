@@ -12,17 +12,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import packagemain.Apartment;
 import packagemain.Mockemail;
-import packagemain.apartmentsearch;
+import packagemain.ApartmentSearch;
 
 public class Test {
-	protected final apartmentsearch apatment;
+	protected final ApartmentSearch apatment;
 	private final Mockemail mockemail;
-	public Test(apartmentsearch apartment, Mockemail Mockemail) {
+	public Test(ApartmentSearch apartment, Mockemail Mockemail) {
 		this.apatment=apartment;
 	    mockemail=Mockemail;
 		
 	}
-	public apartmentsearch w =new apartmentsearch();
+	public ApartmentSearch w =new ApartmentSearch();
 	public  ArrayList <Apartment>cu = new ArrayList<>();
 	public  ArrayList <Apartment>First = new ArrayList<>();
 	private  String ByType,Material,Placement ,LeaseLength;
@@ -393,7 +393,7 @@ public class Test {
 		public void emailWithTheResultShoudBeSendTo(String string) {
 		    
 			
-			verify(mockemail.getEmailservicse(),times(0)).sendEmail(string, apartmentsearch.result);
+			verify(mockemail.getEmailservicse(),times(0)).sendEmail(string, (ArrayList<Apartment>) ApartmentSearch.result);
 	
 			
 			
