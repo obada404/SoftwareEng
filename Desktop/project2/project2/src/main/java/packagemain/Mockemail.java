@@ -4,8 +4,8 @@ import static org.mockito.Mockito.*;
 public class Mockemail {
 
 
-	Emailservices a =new Emailservices();
-private Emailservices emailservicse=mock(a.getClass());
+
+private Emailservices emailservicse=mock(Emailservices.class);
 
 
 

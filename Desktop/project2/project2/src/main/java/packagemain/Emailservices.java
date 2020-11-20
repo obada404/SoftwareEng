@@ -32,8 +32,8 @@ public void sendEmail( List <Apartment> result) {
     });
    
     session.setDebug(true);
-   
 
+    Logger log = getLogger(Emailservices.class.getName());
    try {
         
         MimeMessage message = new MimeMessage(session);
@@ -48,19 +48,16 @@ public void sendEmail( List <Apartment> result) {
     		  message.setText("empty");
     	  }
      
-try {
-    String h= result.toString();
-    message.setText(h);
-}
-catch (NullPointerException e){
 
-}
+    String h= result.toString() ==null ?"empty" :result.toString();
 
 
 
 
 
-       Logger log = getLogger(Emailservices.class.getName());
+
+
+
 
 
        log.info("sending...");
@@ -68,6 +65,8 @@ catch (NullPointerException e){
         Transport.send(message);
        log.info("Sent message successfully....");
     } catch (MessagingException mex) {
+       log.info("MessagingException");
+
 
     }
 	
