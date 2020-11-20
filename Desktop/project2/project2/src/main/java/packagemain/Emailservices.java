@@ -1,6 +1,7 @@
 package packagemain;
 
-import org.apache.log4j.Logger;
+
+import org.apache.log4j.*;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -8,7 +9,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.List;
 import java.util.Properties;
 
-import static org.apache.log4j.Logger.*;
+import static org.apache.log4j.Logger.getLogger;
 
 public class Emailservices {
 public void sendEmail( List <Apartment> result) {
