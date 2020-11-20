@@ -66,7 +66,7 @@ public void setEmailservices(Emailservices emailservices) {
 		  if(x.getPlacement().equals(pla))
 			  result.add(x);
 	  }
-	 emailservices.sendEmail((ArrayList<Apartment>) result);
+	 emailservices.sendEmail(result);
 	  return  result;
   }
 public List<Apartment> searchByMaterial(String mat) {
@@ -181,7 +181,7 @@ public List<Apartment> searchBybathrooms(int numt) {
 			  result.add(x);
 		  }
 	  }
-	emailservices.sendEmail( (ArrayList<Apartment>) result);
+	emailservices.sendEmail(result);
 	  return result;
 }
 public List<Apartment> searchByAllowPets(String  string) {
@@ -192,7 +192,7 @@ public List<Apartment> searchByAllowPets(String  string) {
 		  if(x.isallowPets()&&string.equals("yes"))
 			  result.add(x);
 	  }
-	 emailservices.sendEmail((ArrayList<Apartment>) result);
+	 emailservices.sendEmail(result);
 	  return result;
 }
 public List<Apartment> searchByType(String type) {
@@ -204,7 +204,7 @@ public List<Apartment> searchByType(String type) {
 	  }
 	 
 	 
-      emailservices.sendEmail( (ArrayList<Apartment>) result);
+      emailservices.sendEmail(result);
 	 
 	  return result;
 	 
@@ -216,7 +216,7 @@ public List<Apartment> searchByLeaseLength(String len) {
 		  if(x.getLeaseLength().equals(len))
 			  result.add(x);
 	  }
-	emailservices.sendEmail( (ArrayList<Apartment>) result);
+	emailservices.sendEmail(result);
 	  return result;
 }
 public List<Apartment> searchByAmenities(String strings) {
@@ -228,20 +228,20 @@ public List<Apartment> searchByAmenities(String strings) {
 	  }
 		  
 	  
-	 emailservices.sendEmail( (ArrayList<Apartment>) result);
+	 emailservices.sendEmail(result);
 	 return result;
 	
 }
 public String print(List<Apartment> e) {
 	String a ="" ;
 	for(Apartment g : e) {
-		a.concat(g.toString());
+		a=a.concat(g.toString());
 
 	}
 	if(e.isEmpty())
-		a.concat( "no result");
+	a=	a.concat( "no result");
 
-	a.concat( "\n");
+	a=a.concat( "\n");
 	return a;
 
 }

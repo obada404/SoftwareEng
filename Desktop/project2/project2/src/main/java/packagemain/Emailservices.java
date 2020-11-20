@@ -1,18 +1,12 @@
 package packagemain;
 
+import org.apache.log4j.Logger;
 
-
-import java.util.List;
-import java.util.Properties;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
+import java.util.List;
+import java.util.Properties;
 public class Emailservices {
 public void sendEmail( List <Apartment> result) {
 
@@ -27,6 +21,7 @@ public void sendEmail( List <Apartment> result) {
     properties.put("mail.smtp.ssl.enable", "true");
     properties.put("mail.smtp.auth", "true");
     Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+        @Override
         protected PasswordAuthentication getPasswordAuthentication() {
             return new PasswordAuthentication("o.qasrawi@stu.najah.edu", "obada123456");
         }
@@ -44,7 +39,8 @@ public void sendEmail( List <Apartment> result) {
      
   
     	  message.setSubject("this is the sub");
-    	 	  if (result.equals(null)) {
+    	  boolean f=(result.equals(null));
+    	 	  if (f) {
     		  message.setText("empty");
     	  }
      
@@ -53,15 +49,15 @@ public void sendEmail( List <Apartment> result) {
     	  message.setText(h);
       }
 
-    	  
-    	
-     
-        
 
-        System.out.println("sending...");
+
+       Logger log = Logger.getLogger(Emailservices.class.getName());
+
+
+       log.info("sending...");
         // Send message
         Transport.send(message);
-        System.out.println("Sent message successfully....");
+       log.info("Sent message successfully....");
     } catch (MessagingException mex) {
         mex.printStackTrace();
     }
