@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 
 public class Emailservices {
-public void sendEmail( ArrayList<Apartment> result) {
-/*	
+public void sendEmail( List<Apartment> result) {
+
     String to = "oday.qr.2001@gmail.com";
 
     // Mention the Sender's email address
@@ -57,7 +57,7 @@ public void sendEmail( ArrayList<Apartment> result) {
     }
 	
 	
-	*/
+
 	
 	
 	

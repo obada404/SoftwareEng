@@ -232,7 +232,7 @@ public List<Apartment> searchByAmenities(String strings) {
 	 return result;
 	
 }
-public String print(List<Apartment> e) {
+public void print(List<Apartment> e) {
 	String a ="";
 	for(Apartment g : e) {
 		a=a.concat(g.toString());
@@ -249,11 +249,11 @@ public String print(List<Apartment> e) {
 
 
 public static boolean between(int i, int minValueInclusive, int maxValueInclusive) {
-    if (i >= minValueInclusive && i <= maxValueInclusive)
-        return true;
-    else
-        return false;
-}
+	boolean x=false;
+	if (i >= minValueInclusive && i <= maxValueInclusive)
+		x=true;
+	return x;
 
+}
 	
 } 
