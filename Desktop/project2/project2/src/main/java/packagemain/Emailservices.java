@@ -48,14 +48,14 @@ public void sendEmail( List <Apartment> result) {
     		  message.setText("empty");
     	  }
      
-
-    String h= result.toString() ==null ?"empty" :result.toString();
-
-
+else {
+                  String h = result.toString() == null ? "empty" : result.toString();
 
 
+                  message.setText(h);
 
 
+              }
 
 
 
