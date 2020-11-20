@@ -233,27 +233,26 @@ public List<Apartment> searchByAmenities(String strings) {
 	
 }
 public void print(List<Apartment> e) {
-	String a ="";
 	for(Apartment g : e) {
-		a=a.concat(g.toString());
+		System.out.println(g.toString());
 
 	}
 	if(e.isEmpty())
-		a= "no result \n";
+	System.out.println( "no result");
 
-	a=a.concat("\n");
-	return a;
+	System.out.println(  );
 
 }
 
 
 
 public static boolean between(int i, int minValueInclusive, int maxValueInclusive) {
-	boolean x=false;
-	if (i >= minValueInclusive && i <= maxValueInclusive)
-		x=true;
-	return x;
+	boolean t =false ;
+    if (i >= minValueInclusive && i <= maxValueInclusive)
+        t= true;
 
+        return t;
 }
+
 	
 } 
