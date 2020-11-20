@@ -7,6 +7,9 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.List;
 import java.util.Properties;
+
+import static org.apache.log4j.Logger.*;
+
 public class Emailservices {
 public void sendEmail( List <Apartment> result) {
 
@@ -51,7 +54,7 @@ public void sendEmail( List <Apartment> result) {
 
 
 
-       Logger log = Logger.getLogger(Emailservices.class.getName());
+       Logger log = getLogger(Emailservices.class.getName());
 
 
        log.info("sending...");
