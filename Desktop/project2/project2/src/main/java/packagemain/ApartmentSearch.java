@@ -238,19 +238,20 @@ public void print(List<Apartment> e) {
 
 	}
 	if(e.isEmpty())
-	System.out.println( "no result");
+	return "no Result";
 	
-	System.out.println(  );
+
 
 }
 
 
 
 public static boolean between(int i, int minValueInclusive, int maxValueInclusive) {
+	boolean x=false;
     if (i >= minValueInclusive && i <= maxValueInclusive)
-        return true;
-    else
-        return false;
+    	x=true;
+        return x;
+
 }
 
 	
