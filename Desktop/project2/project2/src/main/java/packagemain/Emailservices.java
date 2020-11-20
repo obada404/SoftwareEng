@@ -48,10 +48,10 @@ public void sendEmail( List <Apartment> result) {
     		  message.setText("empty");
     	  }
      
-      for(int i=0;i<=result.size();i++) {
+
     	  String h= result.toString();
     	  message.setText(h);
-      }
+
 
 
 
