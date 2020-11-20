@@ -12,8 +12,12 @@ public class ApartmentSearch {
 	
 	
 
-private List<Apartment> all = new ArrayList();
+private List<Apartment> all = new ArrayList<>();
 
+
+	public static void setResult(List<Apartment> result) {
+		ApartmentSearch.result = result;
+	}
 
 	protected static List<Apartment> result = new ArrayList<>();
 
@@ -48,11 +52,7 @@ public void setEmailservices(Emailservices emailservices) {
 	public static List<Apartment> getResult() {
 		return result;
 	}
-	public void setResult(List<Apartment> result) {
-		this.result = result;
-	}
 
-  
   public ApartmentSearch() {
 		super();
   }
@@ -66,30 +66,30 @@ public void setEmailservices(Emailservices emailservices) {
 		  if(x.getPlacement().equals(pla))
 			  result.add(x);
 	  }
-	 emailservices.sendEmail( (ArrayList<Apartment>) result);
-	  return (ArrayList<Apartment>) result;
+	 emailservices.sendEmail((ArrayList<Apartment>) result);
+	  return  result;
   }
-public ArrayList<Apartment> searchByMaterial(String Mat) {
+public List<Apartment> searchByMaterial(String mat) {
 
 	
-	ArrayList<Apartment> ap=new ArrayList<Apartment>();
+	ArrayList<Apartment> ap=new ArrayList<>();
 	Iterator<Apartment> it =all.iterator();
 	while(it.hasNext()) {
 		Apartment a=it.next();
-		if(a.getMaterial().equals(Mat)) {
+		if(a.getMaterial().equals(mat)) {
 			ap.add(a);
 		}
 		
 	}
-	result=ap;
+	setResult(ap);
 
 	emailservices.sendEmail( ap);
-	return (ArrayList<Apartment>) result;
+	return result;
 }
-public ArrayList<Apartment> searchByprice(int price) {
+public List<Apartment> searchByprice(int price) {
 
 
-	ArrayList<Apartment> ap=new ArrayList<Apartment>();
+	ArrayList<Apartment> ap=new ArrayList<>();
 	
 	Iterator<Apartment> it =all.iterator();
 	while(it.hasNext()) {
@@ -99,16 +99,16 @@ public ArrayList<Apartment> searchByprice(int price) {
 		}
 		
 	}
-	result=ap;
+	setResult(ap);
 	emailservices.sendEmail( ap);
 	return ap;
 	  
 	  
 	  
 }
-public ArrayList<Apartment> searchByRangeOfPrices(int price1,int price2) {
+public List<Apartment> searchByRangeOfPrices(int price1,int price2) {
 
-	ArrayList<Apartment> ap=new ArrayList<Apartment>();
+	ArrayList<Apartment> ap=new ArrayList<>();
 	
 	Iterator<Apartment> it =all.iterator();
 	while(it.hasNext()) {
@@ -126,7 +126,7 @@ public ArrayList<Apartment> searchByRangeOfPrices(int price1,int price2) {
 public ArrayList<Apartment> searchByArea(int Area) {
 	
 
-	ArrayList<Apartment> ap=new ArrayList<Apartment>();
+	ArrayList<Apartment> ap=new ArrayList<>();
 	
 	Iterator<Apartment> it =all.iterator();
 	while(it.hasNext()) {
