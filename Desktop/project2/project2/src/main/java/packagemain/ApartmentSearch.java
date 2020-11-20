@@ -238,7 +238,8 @@ public void print(List<Apartment> e) {
 
 	}
 	if(e.isEmpty())
-	return "no Result";
+		String x="no Result";
+	return x;
 	
 
 
