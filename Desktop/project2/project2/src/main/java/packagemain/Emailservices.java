@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 //thirdbarty
 public class Emailservices {
-public void sendEmail(String email, ArrayList<Apartment> result) {
+public void sendEmail( ArrayList<Apartment> result) {
 /*	
     String to = "oday.qr.2001@gmail.com";
 
