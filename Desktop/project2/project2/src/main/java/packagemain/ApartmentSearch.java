@@ -46,7 +46,7 @@ public void setEmailservices(Emailservices emailservices) {
 		c.setBedrooms(Integer.parseInt(st[7]));
 		c.setBathrooms(Integer.parseInt(st[8]));
 		c.setLeaseLength(st[9]);
-		all.add(c);
+	 	all.add(c);
 		
 	}
 	public static List<Apartment> getResult() {
@@ -118,12 +118,11 @@ public List<Apartment> searchByRangeOfPrices(int price1,int price2) {
 		}
 		
 	}
-	result=ap;
-
+	setResult(ap);
 	emailservices.sendEmail( ap);
 	return ap;
 }
-public ArrayList<Apartment> searchByArea(int Area) {
+public List<Apartment> searchByArea(int area) {
 	
 
 	ArrayList<Apartment> ap=new ArrayList<>();
@@ -131,36 +130,36 @@ public ArrayList<Apartment> searchByArea(int Area) {
 	Iterator<Apartment> it =all.iterator();
 	while(it.hasNext()) {
 		Apartment a=it.next();
-		if(a.getArea()==Area) {
+		if(a.getArea()==area) {
 			ap.add(a);
 		}
 		
 	}
-	result=ap;
+	setResult(ap);
 	
 	emailservices.sendEmail( ap);
 	return ap;
 }
-public ArrayList<Apartment> searchByRangeOfAreas(int Area1,int Area2) {
+public  List<Apartment> searchByRangeOfAreas(int area1,int area2) {
 	
-	ArrayList<Apartment> ap=new ArrayList<Apartment>();
+	ArrayList<Apartment> ap=new ArrayList<>();
 	
 	Iterator<Apartment> it =all.iterator();
 	while(it.hasNext()) {
 		Apartment a=it.next();
-		if(between(a.getArea(),Area1,Area2)) {
+		if(between(a.getArea(),area1,area2)) {
 			ap.add(a);
 		}
 		
 	}
-	result=ap;
+	setResult(ap);
 
 	emailservices.sendEmail( ap);
 	return ap;
 }
-public ArrayList<Apartment> searchBybedrooms(int numd) {
+public List<Apartment> searchBybedrooms(int numd) {
 	
-	ArrayList<Apartment> ap=new ArrayList<Apartment>();
+	ArrayList<Apartment> ap=new ArrayList<>();
 	
 	Iterator<Apartment> it =all.iterator();
 	while(it.hasNext()) {
@@ -170,12 +169,11 @@ public ArrayList<Apartment> searchBybedrooms(int numd) {
 		}
 		
 	}
-	result=ap;
-	
+	setResult(ap);
 	emailservices.sendEmail( ap);
 	return ap;
 }
-public ArrayList<Apartment> searchBybathrooms(int numt) {
+public List<Apartment> searchBybathrooms(int numt) {
 	 result.clear();
 	 for(Apartment x:all)
 	  {
@@ -186,22 +184,22 @@ public ArrayList<Apartment> searchBybathrooms(int numt) {
 	emailservices.sendEmail( (ArrayList<Apartment>) result);
 	  return (ArrayList<Apartment>) result;
 }
-public ArrayList<Apartment> searchByAllow_Pets(String  string) {
+public List<Apartment> searchByAllowPets(String  string) {
 	 result.clear();
 	 for(Apartment x:all) {
 		  if((!x.isallowPets())&&string.equals("no"))
 			  result.add(x);
-		  else if(x.isallowPets()&&string.equals("yes"))
+		  if(x.isallowPets()&&string.equals("yes"))
 			  result.add(x);
 	  }
 	 emailservices.sendEmail((ArrayList<Apartment>) result);
 	  return (ArrayList<Apartment>) result;
 }
-public ArrayList<Apartment> searchByType(String Type) {
+public List<Apartment> searchByType(String type) {
 	 result.clear();
 	 for(Apartment x:all)
 	  {
-		  if(x.getType().equals(Type))
+		  if(x.getType().equals(type))
 			  result.add(x);
 	  }
 	 
@@ -211,17 +209,17 @@ public ArrayList<Apartment> searchByType(String Type) {
 	  return (ArrayList<Apartment>) result;
 	 
 }
-public ArrayList<Apartment> searchByLease_Length(String Len) {
+public List<Apartment> searchByLeaseLength(String len) {
 	 result.clear();
 	 for(Apartment x:all)
 	  {
-		  if(x.getLeaseLength().equals(Len))
+		  if(x.getLeaseLength().equals(len))
 			  result.add(x);
 	  }
 	emailservices.sendEmail( (ArrayList<Apartment>) result);
 	  return (ArrayList<Apartment>) result;
 }
-public ArrayList<Apartment> searchByAmenities(String strings) {
+public List<Apartment> searchByAmenities(String strings) {
 	 result.clear();
 	 for(Apartment x:all)
 	  {
@@ -234,7 +232,7 @@ public ArrayList<Apartment> searchByAmenities(String strings) {
 	 return (ArrayList<Apartment>) result;
 	
 }
-public void print(ArrayList<Apartment> e) {
+public void print(List<Apartment> e) {
 	for(Apartment g : e) {
 		System.out.println(g.toString());
 

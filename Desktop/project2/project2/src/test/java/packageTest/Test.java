@@ -171,7 +171,7 @@ public class Test {
 		public void iSearchAboutHomeByLeaseLength(String string) {
 			cu.clear();
 			LeaseLength =string;
-			cu.addAll( w.searchByLease_Length(string));
+			cu.addAll( w.searchByLeaseLength(string));
 			First =last(cu);// last_senrio(cu);
 		}
 		@Then("A list of homes that matches the Lease Length  should be returned and printed on the console")
@@ -220,7 +220,7 @@ public class Test {
 		public void iSearchAboutHomeByAllowPets(String string) {
 			cu.clear();
 			AllowPets =string;
-			cu.addAll( w.searchByAllow_Pets(string));
+			cu.addAll( w.searchByAllowPets(string));
 			First =last(cu);//	 last_senrio(cu);
 		}
 

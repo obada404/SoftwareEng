@@ -2,7 +2,7 @@ package packagemain;
 
 import java.util.ArrayList;
 
-//thirdbarty
+
 public class Emailservices {
 public void sendEmail( ArrayList<Apartment> result) {
 /*	
