@@ -7,7 +7,7 @@ private Emailservices emailservicse=mock(Emailservices.class);
 
 
 
-public Mockemail(Apartment_search apa) {
+public Mockemail(apartmentSearch apa) {
 	apa.setEmailservices(emailservicse);
 	
 	
